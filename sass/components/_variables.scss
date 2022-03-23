@@ -1,37 +1,112 @@
-$title: hsla(0, 0%, 0%, 1); 
+$c-title: hsla(0, 0%, 0%, 1);
+$c-text: hsla(0, 0%, 35%, 1);
+$c-input-onboarding: #509ad6;
+$c-white: hsla(0, 0%, 100%, 1);
+$c-primary: hsla(48, 93%, 53%, 1);
+$c-secondary: hsla(52, 83%, 14%, 1);
+$c-error-input: hsla(0, 0%, 100%, 1);
+$c-bg-primary: hsla(220, 18%, 97%, 1);
+$c-bg-secondary: hsla(235, 9%, 29%, 1);
+$c-btn-hprimary: hsla(48, 100%, 75%, 1);
+$c-btn-hsecondary: hsla(52, 23%, 50%, 1);
+
+$ff-footer: "Inter", sans-serif;
+$ff-text: "Source Sans Pro", sans-serif;
+$ff-heading: "Space Grotesk", sans-serif;
+
+$fs-body: 1.8rem;
+$fs-title: 5.6rem;
+$fs-subtitle: 3.6rem;
+$fs-title-footer: 2rem;
+
+$lh-title: 7.1rem;
+$lh-text: 2.7rem;
+$lh-body: 2.3rem;
+
+$wrapper: max(2rem, 15.3vw - 18rem / 2);
 
 :root {
-    // Color
-    /* light mode  */
-    --c-title: hsla(0, 0%, 0%, 1); 
-    --c-text: hsla(0, 0%, 35%, 1); 
-    --c-choose-onboarding: #509AD6; 
-    --c-white: hsla(0, 0%, 100%, 1);
-    --c-primary: hsla(48, 93%, 53%, 1);
-    --c-secondary: hsla(52, 83%, 14%, 1); 
-    --c-error-input: hsla(0, 0%, 100%, 1); 
-    --c-bg-primary: hsla(220, 18%, 97%, 1); 
-    --c-bg-secondary: hsla(235, 9%, 29%, 1); 
-    --c-btn-hprimary: hsla(48, 100%, 75%, 1); 
-    --c-btn-hsecondary: hsla(52, 23%, 50%, 1); 
+  @each $property, $value in $vars {
+    --#{$property}: #{$value};
+  }
+  // Color
+  /* light mode  */
+  --c-text: #{$c-text};
+  --c-white: #{$c-white};
+  --c-title: #{$c-title};
+  --c-primary: #{$c-primary};
+  --c-secondary: #{$c-secondary};
+  --c-bg-primary: #{$c-bg-primary};
+  --c-error-input: #{$c-error-input};
+  --c-bg-secondary: #{$c-bg-secondary};
+  --c-btn-hprimary: #{$c-btn-hprimary};
+  --c-btn-hsecondary: #{$c-btn-hsecondary};
+  --c-input-onboarding: #{$c-input-onboarding};
 
-    // Font family
-    --ff-text: 'Source Sans Pro', sans-serif;
-    --ff-heading: 'Space Grotesk', sans-serif;
-    --ff-footer: 'Inter', sans-serif;
+  // Font family
+  --ff-text: #{$ff-text};
+  --ff-footer: #{$ff-footer};
+  --ff-heading: #{$ff-heading};
 
-    // Font size 
-    --fs-body: 1.8rem; 
-    --fs-title: 5.6rem; 
-    --fs-subtitle: 3.6rem;
-    --fs-title-footer: 2rem; 
+  // Font size
+  --fs-body: #{$fs-body};
+  --fs-title: #{$fs-title};
+  --fs-subtitle: #{$fs-subtitle};
+  --fs-title-footer: #{$fs-title-footer};
 
-    //line-height
-    --lh-title: 7.1rem;
-    --lh-text: 2.7rem;
-    --lh-body: 2.3rem;
+  //line-height
+  --lh-title: #{$lh-title};
+  --lh-text: #{$lh-text};
+  --lh-body: #{$lh-body};
 
-     // wrapper
-     --wrapper: max(2rem, 15.3vw - 18rem / 2);
+  // wrapper
+  --wrapper: #{$wrapper};
+
+  // breakPoints
+  $breakpoints: (
+    small: 31.188rem,
+    medium: 43.688rem,
+    large: 62.438rem,
+    xlarge: 87.438rem,
+  );
+
+  @mixin breakpoint($size) {
+    $breakpoint-value: map-get($breakpoints, $size);
+
+    @media screen and (min-width: $breakpoint-value) {
+      @content;
+    }
+  }
+
+  // button
+  @mixin button-bg($bg) {
+    background-color: $bg;
+
+    @if $bg == $c-primary {
+      font-family: var(--ff-heading);
+      color: var(--c-title);
+      &:hover {
+        background-color: var(--c-btn-hprimary);
+        transition: background-color 0.5s ease;
+      }
+    } @else if $bg == $c-secondary {
+      font-family: var(--ff-text);
+      color: var(--c-white);
+      &:hover {
+        color: var(c-title);
+        background-color: var(--c-btn-hsecondary);
+        transition: background-color 0.5s ease;
+      }
+    }
+  }
+
+  .btn {
+    border-color: transparent;
+    font-size: var(--fs-body);
+    padding: 18px 24px;
+    border-radius: 5px;
+    font-weight: 700;
+    max-width: max-content;
+    cursor: pointer;
+  }
 }
-

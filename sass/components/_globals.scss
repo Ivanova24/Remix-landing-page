@@ -2,7 +2,7 @@
 
 //reset
 html {
-    font-family: v.var(--ff-text);
+    font-family: var(--ff-text);
     font-size: 62.5%
   }
   
@@ -13,19 +13,19 @@ html {
   }
   
   body {
-    font-size: v.var(--fs-body);
-    line-height: v.var(--lh-body);
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
   }
   
   p {
-    color: v.var(--c-text);
-    line-height: v.var(--lh-text); 
+    color: var(--c-text);
+    line-height: var(--lh-text); 
   }
   
   h1,
   h2,
   h3 {
-      line-height: v.var(--lh-title);
+      line-height: var(--lh-title);
   }
   
   *:where(:not(iframe, canvas, img, svg, video):not(svg *, symbol *)) {
