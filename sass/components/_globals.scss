@@ -1,8 +1,8 @@
-@use 'variables' as v;
+@use 'variables' as *;
 
 //reset
 html {
-    font-family: var(--ff-text);
+    font-family: $ff-text;
     font-size: 62.5%
   }
   
@@ -13,19 +13,19 @@ html {
   }
   
   body {
-    font-size: var(--fs-body);
-    line-height: var(--lh-body);
+    font-size: $fs-body;
+    line-height: $lh-body;
   }
   
   p {
-    color: var(--c-text);
-    line-height: var(--lh-text); 
+    color: $c-text;
+    line-height: $lh-text; 
   }
   
   h1,
   h2,
   h3 {
-      line-height: var(--lh-title);
+      line-height: $lh-title;
   }
   
   *:where(:not(iframe, canvas, img, svg, video):not(svg *, symbol *)) {

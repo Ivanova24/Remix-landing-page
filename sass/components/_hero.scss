@@ -1,54 +1,54 @@
-@use "variables" as v;
+@use "variables" as *;
 
 .hero {
-  padding: 4rem var(--wrapper) 0;
+  padding: 4rem $wrapper 0;
+}
 
-  .header {
-    margin-bottom: clamp(
-      3.2rem,
-      calc(3.2rem + (9.4 - 3.2) * ((100vw - 37rem) / (114 - 37))),
-      9.4rem
-    );
+.header {
+  margin-bottom: clamp(
+    3.2rem,
+    calc(3.2rem + (9.4 - 3.2) * ((100vw - 37rem) / (114 - 37))),
+    9.4rem
+  );
+}
 
-    .navbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-      .menu-btn {
-        cursor: pointer;
+  .menu-btn {
+    cursor: pointer;
 
-        .none {
-          display: none;
-        }
-      }
-
-      .menu {
-        background-color: var(--c-white);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        row-gap: 30px;
-        position: absolute;
-        left: 0;
-        top: 108px;
-        width: 100%;
-        height: 100vh;
-        padding-top: 30px;
-        opacity: 0;
-        transition: opacity 0.5s ease;
-        pointer-events: none;
-
-        .btn-cta {
-          @include v.button-bg(v.$c-primary);
-        }
-      }
-
-      .menu.is-active {
-        opacity: 1;
-        pointer-events: auto;
-        row-gap: 4rem;
-      }
+    .none {
+      display: none;
     }
+  }
+
+  .menu {
+    background-color: $c-white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 30px;
+    position: absolute;
+    left: 0;
+    top: 108px;
+    width: 100%;
+    height: 100vh;
+    padding-top: 30px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+
+    .btn-cta {
+      @include button-bg($c-primary);
+    }
+  }
+
+  .menu.is-active {
+    opacity: 1;
+    pointer-events: auto;
+    row-gap: 4rem;
   }
 }
