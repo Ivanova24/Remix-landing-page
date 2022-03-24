@@ -9,6 +9,10 @@
   max-width: -moz-max-content;
   max-width: max-content;
   cursor: pointer;
+  display: flex;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+  align-items: center;
 }
 
 html {
@@ -32,10 +36,16 @@ p {
   line-height: 2.7rem;
 }
 
+h1 {
+  font-size: 5.6rem;
+}
+
 h1,
 h2,
 h3 {
+  font-family: "Space Grotesk", sans-serif;
   line-height: 7.1rem;
+  font-weight: bold;
 }
 
 *:where(:not(iframe, canvas, img, svg, video):not(svg *, symbol *)) {
@@ -49,11 +59,14 @@ h3 {
   box-sizing: border-box;
 }
 
-a, button {
+a,
+button {
   cursor: revert;
 }
 
-ol, ul, menu {
+ol,
+ul,
+menu {
   list-style: none;
 }
 
@@ -102,11 +115,11 @@ meter {
 }
 
 .hero {
-  padding: 4rem max(2rem, 15.3vw - 9rem) 0;
+  padding: 4rem max(2rem, 15.3vw - 9rem) 4rem;
 }
 
 .header {
-  margin-bottom: clamp(3.2rem, 3.2rem + 6.2 * (100vw - 37rem) / 77, 9.4rem);
+  margin-bottom: clamp(2rem, 2rem + 4 * (100vw - 37rem) / 77, 6rem);
 }
 
 .navbar {
@@ -121,11 +134,9 @@ meter {
   display: none;
 }
 .navbar .menu {
-  background-color: white;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  row-gap: 30px;
+  row-gap: 4rem;
   position: absolute;
   left: 0;
   top: 108px;
@@ -145,9 +156,67 @@ meter {
   background-color: #ffe680;
   transition: background-color 0.5s ease;
 }
+.navbar .menu-links {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5rem;
+  align-items: center;
+}
+.navbar .menu-links li {
+  font-family: "Space Grotesk", sans-serif;
+  color: #595959;
+  font-weight: 500;
+}
+.navbar .menu-links a:hover {
+  -webkit-text-decoration: underline #f7ca18 0.5rem;
+          text-decoration: underline #f7ca18 0.5rem;
+  text-underline-offset: 0.5rem;
+}
 .navbar .menu.is-active {
   opacity: 1;
   pointer-events: auto;
-  row-gap: 4rem;
+  background-color: white;
+}
+@media screen and (min-width: 62.438rem) {
+  .navbar {
+    display: grid;
+    justify-content: initial;
+    grid-template-columns: -webkit-max-content auto;
+    grid-template-columns: max-content auto;
+  }
+  .navbar .logo {
+    margin-right: 3.2rem;
+  }
+  .navbar .menu-btn {
+    display: none;
+  }
+  .navbar .menu {
+    justify-content: space-between;
+    pointer-events: auto;
+    flex-direction: row;
+    position: static;
+    padding-top: 0;
+    height: auto;
+    width: auto;
+    opacity: 1;
+  }
+  .navbar .menu-links {
+    flex-direction: row;
+    -moz-column-gap: 2.4rem;
+         column-gap: 2.4rem;
+  }
+}
+
+.banner-img {
+  max-width: 63.4rem;
+}
+
+.banner-description .cursor {
+  position: relative;
+}
+.banner-description .cursor::after {
+  content: url(/Assets/never-highlight.svg);
+  position: absolute;
+  left: -0.7rem;
 }
 /*# sourceMappingURL=main.css.map */

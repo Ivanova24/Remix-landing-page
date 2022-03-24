@@ -1,15 +1,11 @@
 @use "variables" as *;
 
 .hero {
-  padding: 4rem $wrapper 0;
+  padding: 4rem $wrapper 4rem;
 }
 
 .header {
-  margin-bottom: clamp(
-    3.2rem,
-    calc(3.2rem + (9.4 - 3.2) * ((100vw - 37rem) / (114 - 37))),
-    9.4rem
-  );
+  margin-bottom: clamp(2rem, calc(2rem + (6 - 2) * ((100vw - 37rem) / (114 - 37))), 6rem);
 }
 
 .navbar {
@@ -26,11 +22,9 @@
   }
 
   .menu {
-    background-color: $c-white;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    row-gap: 30px;
+    row-gap: 4rem;
     position: absolute;
     left: 0;
     top: 108px;
@@ -46,9 +40,73 @@
     }
   }
 
+  .menu-links {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5rem;
+    align-items: center;
+
+    li {
+      font-family: $ff-heading;
+      color: $c-text;
+      font-weight: 500;
+    }
+
+    a:hover {
+      text-decoration: underline $c-primary 0.5rem;
+      text-underline-offset: 0.5rem;
+    }
+  }
+
   .menu.is-active {
     opacity: 1;
     pointer-events: auto;
-    row-gap: 4rem;
+    background-color: $c-white;
+  }
+
+  @include breakpoint(large) {
+    display: grid;
+    justify-content: initial;
+    grid-template-columns: max-content auto;
+
+    .logo {
+      margin-right: 3.2rem;
+    }
+
+    .menu-btn {
+      display: none;
+    }
+
+    .menu {
+      justify-content: space-between;
+      pointer-events: auto;
+      flex-direction: row;
+      position: static;
+      padding-top: 0;
+      height: auto;
+      width: auto;
+      opacity: 1;
+    }
+
+    .menu-links {
+      flex-direction: row;
+      column-gap: 2.4rem;
+    }
+  }
+}
+
+.banner-img {
+  max-width: 63.4rem;
+}
+
+.banner-description {
+  .cursor {
+    position: relative;
+  }
+
+  .cursor::after {
+    content: url(/Assets/never-highlight.svg);
+    position: absolute;
+    left: -0.7rem;
   }
 }
