@@ -24,9 +24,17 @@ $fs-subtitle: 3.6rem;
 $fs-title-footer: 2rem;
 
 //line-height
+$lh-subtitle: 4.6rem;
 $lh-title: 7.1rem;
 $lh-text: 2.7rem;
 $lh-body: 2.3rem;
+
+// margin
+$mg-x1: 8px; 
+$mg-x2-2: 1.4rem; 
+$mg-x2: 1.6rem; 
+$mg-x3: 2.4rem;
+$mg-x4: 3.2rem;
 
 // wrapper
 $wrapper: max(2rem, 15.3vw - 18rem / 2);
@@ -67,6 +75,10 @@ $breakpoints: (
         transition: background-color 0.5s ease;
       }
     }
+  }
+
+  .wrapper {
+    padding-inline: max(2rem, 15.3vw - 9rem);
   }
 
   .btn {

@@ -1,11 +1,15 @@
 @use "variables" as *;
 
 .hero {
-  padding: 4rem $wrapper 4rem;
+  padding: 4rem $wrapper 0;
 }
 
 .header {
-  margin-bottom: clamp(2rem, calc(2rem + (6 - 2) * ((100vw - 37rem) / (114 - 37))), 6rem);
+  margin-bottom: clamp(
+    2rem,
+    calc(2rem + (6 - 2) * ((100vw - 37rem) / (114 - 37))),
+    6rem
+  );
 }
 
 .navbar {
@@ -27,10 +31,10 @@
     row-gap: 4rem;
     position: absolute;
     left: 0;
-    top: 108px;
+    top: 10vh;
     width: 100%;
-    height: 100vh;
-    padding-top: 30px;
+    height: 90vh;
+    padding-top: 10%;
     opacity: 0;
     transition: opacity 0.5s ease;
     pointer-events: none;
@@ -60,6 +64,7 @@
 
   .menu.is-active {
     opacity: 1;
+    z-index: 1;
     pointer-events: auto;
     background-color: $c-white;
   }
@@ -95,11 +100,26 @@
   }
 }
 
+.banner {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4rem;
+}
+
 .banner-img {
-  max-width: 63.4rem;
+  max-width: 37.8rem;
+  margin: 0 auto;
 }
 
 .banner-description {
+  h1 {
+    margin-bottom: 4vh;
+  }
+
+  p {
+    margin-bottom: $mg-x3;
+  }
+
   .cursor {
     position: relative;
   }
@@ -108,5 +128,27 @@
     content: url(/Assets/never-highlight.svg);
     position: absolute;
     left: -0.7rem;
+  }
+
+  .btn-cta {
+    @include button-bg($c-primary);
+  }
+}
+
+@include breakpoint(large) {
+  .banner {
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+
+    &-img {
+      order: 1;
+      margin: initial;
+      max-width: 47.7rem;
+    }
+
+    &-description {
+      flex-basis: 40vw;
+    }
   }
 }

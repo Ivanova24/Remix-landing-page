@@ -24,13 +24,18 @@ p {
 
 h1 {
   font-size: $fs-title;
+  line-height: $lh-title;
+}
+
+h2 {
+  font-size: $fs-subtitle;
+  line-height: $lh-subtitle;
 }
 
 h1,
 h2,
 h3 {
   font-family: $ff-heading;
-  line-height: $lh-title;
   font-weight: bold;
 }
 

@@ -1,0 +1,49 @@
+@use "variables" as *;
+
+.collaboration {
+  display: flex;
+  row-gap: $mg-x4;
+  flex-direction: column;
+  margin-top: clamp(
+    7.8rem,
+    calc(7.8rem + (12.2 - 7.8) * ((100vw - 37rem) / (114 - 37))),
+    12.2rem
+  );
+
+  @include breakpoint(large) {
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+
+    &-img {
+      order: 1;
+      margin: initial;
+      max-width: 51.4rem;
+    }
+
+    &-description {
+      flex-basis: 35vw;
+    }
+  }
+}
+
+.collaboration-description {
+  h2 {
+    margin-bottom: $mg-x1;
+  }
+
+  p {
+    margin-bottom: $mg-x3;
+  }
+
+  a {
+    font-weight: 700;
+    text-decoration-line: underline;
+    text-underline-offset: 0.3rem;
+  }
+
+  a:hover {
+    text-decoration: underline $c-primary 0.5rem;
+    text-underline-offset: 0.5rem;
+  }
+}
