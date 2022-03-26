@@ -1,2 +1,63 @@
 @use "variables" as *;
 
+.testimonial {
+  display: flex;
+  row-gap: $mg-x4;
+  margin-top: 8rem;
+  flex-direction: column;
+  margin-bottom: clamp(
+    3rem,
+    calc(3rem + (8 - 3) * ((100vw - 37rem) / (114 - 37))),
+    8rem
+  );
+
+  &-description {
+    h2 {
+      margin-bottom: $mg-x1;
+    }
+
+    p {
+      margin-bottom: $mg-x2;
+    }
+  }
+}
+
+.testimonial-rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: $mg-x2-2;
+
+  .data {
+    font-weight: 700;
+    margin-right: 0.5rem;
+  }
+
+  .data-text {
+    color: $c-text;
+    margin-right: $mg-x2;
+  }
+
+  .avatars {
+    display: flex;
+    img:not(:first-of-type) {
+      margin-left: -20px;
+    }
+    img {
+      border: 2px solid $c-white;
+      border-radius: 50%;
+    }
+  }
+}
+
+.user {
+    display: flex;
+
+    .user-avatar {
+        max-width: 9.8rem;
+    }
+
+    .user-description {
+        background-color: $c-bg-primary;
+    }
+}
+
