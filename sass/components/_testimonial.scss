@@ -20,6 +20,38 @@
       margin-bottom: $mg-x2;
     }
   }
+
+  &-users {
+    display: grid;
+    row-gap: clamp(
+      2.2rem,
+      calc(2.2rem + (4 - 2.2) * ((100vw - 37rem) / (114 - 37))),
+      4rem
+    );
+
+    article:last-of-type {
+      margin-left: auto;
+    }
+
+    @include breakpoint(medium) {
+      margin-inline: 45px;
+    }
+  }
+
+  @include breakpoint(large) {
+    flex-direction: row;
+    align-items: center;
+
+    &-description {
+      order: 1;
+      margin-left: 3rem;
+    }
+
+    &-users {
+      margin-inline: 0;
+      width: 100%;
+    }
+  }
 }
 
 .testimonial-rating {
@@ -47,17 +79,72 @@
       border-radius: 50%;
     }
   }
+
+  @include breakpoint(large) {
+    span:first-of-type {
+      order: 1;
+      margin-left: 1.6rem;
+    }
+  }
 }
 
 .user {
-    display: flex;
+  display: flex;
+  position: relative;
+  align-items: center;
 
-    .user-avatar {
-        max-width: 9.8rem;
-    }
+  .user-avatar {
+    position: absolute;
+    width: clamp(
+      5.7rem,
+      calc(5.7rem + (9.8 - 5.7) * ((100vw - 37rem) / (114 - 37))),
+      9.8rem
+    );
+  }
 
-    .user-description {
-        background-color: $c-bg-primary;
+  .user-description {
+    display: grid;
+    border-radius: 10px;
+    margin-left: clamp(
+      2.8rem,
+      calc(2.8rem + (5 - 2.8) * ((100vw - 37rem) / (114 - 37))),
+      5rem
+    );
+    width: clamp(
+      26.6rem,
+      calc(26.6rem + (44.8 - 26.6) * ((100vw - 37rem) / (114 - 37))),
+      44.8rem
+    );
+    row-gap: clamp(
+      1.4rem,
+      calc(1.4rem + (1.6 - 1.4) * ((100vw - 37rem) / (114 - 37))),
+      1.6rem
+    );
+    background-color: $c-bg-primary;
+    padding-inline: clamp(
+      4rem,
+      calc(4rem + (7 - 4) * ((100vw - 37rem) / (114 - 37))),
+      7rem
+    );
+    padding-block: clamp(
+      1.5rem,
+      calc(1.5rem + (2.4 - 1.5) * ((100vw - 37rem) / (114 - 37))),
+      2.4rem
+    );
+
+    p {
+      font-size: clamp(
+        1.2rem,
+        calc(1.2rem + (1.8 - 1.2) * ((100vw - 37rem) / (114 - 37))),
+        1.8rem
+      );
+      font-family: $ff-heading;
+      line-height: $lh-body;
+      font-weight: 500;
+
+      span {
+        color: hsla(0, 0%, 0%, 1);
+      }
     }
+  }
 }
-
