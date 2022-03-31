@@ -1,7 +1,7 @@
 // Color
 /* light mode  */
 $c-title: hsla(0, 0%, 0%, 1);
-$c-text: hsl(0, 0%, 33%, 1);
+$c-text: hsl(0, 0%, 23%, 1);
 $c-input-onboarding: #509ad6;
 $c-white: hsla(0, 0%, 100%, 1);
 $c-primary: hsla(48, 93%, 53%, 1);
@@ -77,6 +77,10 @@ $breakpoints: (
 
   .wrapper {
     padding-inline: max(2rem, 15.3vw - 9rem);
+  }
+
+  .sr-only {
+    display: none;
   }
 
   .btn {
