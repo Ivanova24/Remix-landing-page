@@ -1,0 +1,52 @@
+@use "variables" as *;
+
+.pricing {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: clamp(
+    0.2rem,
+    calc(0.2rem + (8 - 0.2) * ((100vw - 37rem) / (114 - 37))),
+    8rem
+  );
+  margin-bottom: 8rem;
+}
+
+.pricing-card {
+  flex: 1 1 35.3rem;
+  padding: 3.6rem;
+
+  .card-title {
+    margin-bottom: $mg-x1;
+    display: grid;
+
+    span {
+      font-weight: 500;
+      font-size: $fs-body;
+      color: $c-text;
+    }
+  }
+
+  .card-text,
+  ul {
+    margin-bottom: $mg-x3;
+  }
+
+  .card-list {
+      display: grid;
+      row-gap: 1.7rem;
+
+    li {
+      display: flex;
+      column-gap: $mg-x2;
+      align-items: center;
+    }
+  }
+
+  .btn-cta {
+    @include button-bg($c-primary);
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+

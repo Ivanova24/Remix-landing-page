@@ -83,6 +83,10 @@ $breakpoints: (
     display: none;
   }
 
+  .fs-title {
+    font-size: $fs-title !important;
+  }
+
   .btn {
     border-color: transparent;
     font-size: $fs-body;

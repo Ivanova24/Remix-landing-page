@@ -7,6 +7,10 @@
   display: none;
 }
 
+.fs-title {
+  font-size: 5.6rem !important;
+}
+
 .btn {
   border-color: transparent;
   font-size: 1.8rem;
@@ -409,7 +413,6 @@ meter {
 }
 
 .newsletter {
-  margin-bottom: 10rem;
   background-color: #f7ca18;
   display: flex;
   flex-direction: column;
@@ -476,5 +479,51 @@ meter {
   .newsletter-img {
     margin: initial;
   }
+}
+
+.pricing {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: clamp(0.2rem, 0.2rem + 7.8 * (100vw - 37rem) / 77, 8rem);
+  margin-bottom: 8rem;
+}
+
+.pricing-card {
+  flex: 1 1 35.3rem;
+  padding: 3.6rem;
+}
+.pricing-card .card-title {
+  margin-bottom: 8px;
+  display: grid;
+}
+.pricing-card .card-title span {
+  font-weight: 500;
+  font-size: 1.8rem;
+  color: #3b3b3b;
+}
+.pricing-card .card-text,
+.pricing-card ul {
+  margin-bottom: 2.4rem;
+}
+.pricing-card .card-list {
+  display: grid;
+  row-gap: 1.7rem;
+}
+.pricing-card .card-list li {
+  display: flex;
+  -moz-column-gap: 1.6rem;
+       column-gap: 1.6rem;
+  align-items: center;
+}
+.pricing-card .btn-cta {
+  background-color: #f7ca18;
+  font-family: "Space Grotesk", sans-serif;
+  color: black;
+  width: 100% !important;
+  justify-content: center;
+}
+.pricing-card .btn-cta:hover {
+  background-color: #ffe680;
+  transition: background-color 0.5s ease;
 }
 /*# sourceMappingURL=main.css.map */
