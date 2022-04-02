@@ -163,7 +163,9 @@ meter {
   pointer-events: none;
 }
 .navbar .menu .btn-cta {
+  justify-content: center;
   background-color: #f7ca18;
+  max-width: 100%;
   font-family: "Space Grotesk", sans-serif;
   color: black;
 }
@@ -249,7 +251,9 @@ meter {
   left: -0.7rem;
 }
 .banner-description .btn-cta {
+  justify-content: center;
   background-color: #f7ca18;
+  max-width: 100%;
   font-family: "Space Grotesk", sans-serif;
   color: black;
 }
@@ -442,7 +446,9 @@ meter {
   color: #413906;
 }
 .newsletter-form .btn-cta {
+  justify-content: center;
   background-color: #413906;
+  max-width: 100%;
   font-family: "Source Sans Pro", sans-serif;
   color: white;
   max-width: 100%;
@@ -483,13 +489,17 @@ meter {
 
 .pricing {
   display: flex;
+  row-gap: 4px;
   flex-wrap: wrap;
   margin-top: clamp(0.2rem, 0.2rem + 7.8 * (100vw - 37rem) / 77, 8rem);
   margin-bottom: 8rem;
 }
 
 .pricing-card {
-  flex: 1 1 35.3rem;
+  flex: 1 1 260px;
+}
+.pricing-card .card-wrapper {
+  display: grid;
   padding: 3.6rem;
 }
 .pricing-card .card-title {
@@ -499,7 +509,6 @@ meter {
 .pricing-card .card-title span {
   font-weight: 500;
   font-size: 1.8rem;
-  color: #3b3b3b;
 }
 .pricing-card .card-text,
 .pricing-card ul {
@@ -507,7 +516,8 @@ meter {
 }
 .pricing-card .card-list {
   display: grid;
-  row-gap: 1.7rem;
+  row-gap: 1.6rem;
+  font-family: "Space Grotesk", sans-serif;
 }
 .pricing-card .card-list li {
   display: flex;
@@ -516,14 +526,61 @@ meter {
   align-items: center;
 }
 .pricing-card .btn-cta {
+  justify-content: center;
   background-color: #f7ca18;
+  max-width: 100%;
   font-family: "Space Grotesk", sans-serif;
   color: black;
-  width: 100% !important;
-  justify-content: center;
 }
 .pricing-card .btn-cta:hover {
   background-color: #ffe680;
   transition: background-color 0.5s ease;
+}
+
+.card-cta {
+  background-color: #434451;
+  border-radius: 10px;
+}
+.card-cta .span-text,
+.card-cta p {
+  color: #c6c8cd;
+}
+.card-cta .card-list {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 1.6rem;
+  -moz-column-gap: 2.4rem;
+       column-gap: 2.4rem;
+}
+
+@media screen and (min-width: 43.688rem) {
+  .pricing-card:nth-of-type(1) > .card-wrapper {
+    padding-left: 0;
+  }
+  .pricing-card:nth-of-type(2) {
+    order: 1;
+  }
+  .pricing-card:nth-of-type(3) > .card-wrapper {
+    padding-right: 0;
+  }
+}
+@media screen and (min-width: 62.438rem) {
+  .pricing {
+    -moz-column-gap: 4rem;
+         column-gap: 4rem;
+  }
+  .pricing-card:nth-of-type(1) > .card-wrapper {
+    padding-left: 3.6rem;
+  }
+  .pricing-card:nth-of-type(2) {
+    order: 0;
+  }
+  .pricing-card:nth-of-type(3) > .card-wrapper {
+    padding-right: 3.6rem;
+  }
+
+  .card-cta .card-list {
+    display: inherit;
+  }
 }
 /*# sourceMappingURL=main.css.map */
