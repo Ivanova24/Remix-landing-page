@@ -27,6 +27,7 @@ $fs-title-footer: 2rem;
 //line-height
 $lh-text: 1.5;
 $lh-body: 1.3;
+$lh-footer: 1.2; 
 
 // margin
 $mg-x1: 8px; 
@@ -92,6 +93,14 @@ $breakpoints: (
 
   .fs-title {
     font-size: $fs-title !important;
+  }
+
+  .logo {
+    height: 2.6rem;
+  }
+
+  .visually-hidden {
+    display: none;
   }
 
   .btn {

@@ -30,9 +30,14 @@ h2 {
   font-size: $fs-subtitle;
 }
 
-h1,
-h2,
 h3 {
+  font-size: $fs-title-footer;
+  font-weight: 700;
+}
+
+
+h1,
+h2 {
   font-family: $ff-heading;
   font-weight: bold;
 }
