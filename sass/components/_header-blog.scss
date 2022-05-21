@@ -1,0 +1,9 @@
+@use "variables" as *;
+
+.header-blog {
+    padding-inline: clamp(1.125rem, calc(1.125rem + ((1vw - 0.48rem) * 11.4583)), 9.375rem);
+    padding-block: clamp(1.125rem, calc(1.125rem + ((1vw - 0.48rem) * 1.9097)), 2.5rem);
+    
+}
+
+
