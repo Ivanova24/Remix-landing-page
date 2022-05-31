@@ -1,0 +1,7 @@
+@use "variables" as *;
+
+.button-toggle {
+  background-color: $c-bg-primary;
+  padding: 10px 20px;
+  border-radius: 5px;
+}

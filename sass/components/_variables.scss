@@ -1,7 +1,7 @@
 // Color
 /* light mode  */
 $c-title: hsla(0, 0%, 0%, 1);
-$c-text: hsl(0, 0%, 23%, 1);
+$c-text: hsla(0, 0%, 23%, 1);
 $c-input-onboarding: #509ad6;
 $c-white: hsla(0, 0%, 100%, 1);
 $c-primary: hsla(48, 93%, 53%, 1);
@@ -11,7 +11,7 @@ $c-bg-primary: hsla(220, 18%, 97%, 1);
 $c-bg-secondary: hsla(235, 9%, 29%, 1);
 $c-btn-hprimary: hsla(48, 100%, 75%, 1);
 $c-btn-hsecondary: hsla(52, 23%, 50%, 1);
-$c-card-text-cta: hsla(223, 7%, 79%, 1); 
+$c-card-text-cta: hsla(223, 7%, 79%, 1);
 
 // Font family
 $ff-footer: "Inter", sans-serif;
@@ -27,18 +27,18 @@ $fs-title-footer: 2rem;
 //line-height
 $lh-text: 1.5;
 $lh-body: 1.3;
-$lh-footer: 1.2; 
+$lh-footer: 1.2;
 
 // margin
-$mg-x1: 8px; 
-$mg-x2-2: 1.4rem; 
-$mg-x2: 1.6rem; 
+$mg-x1: 8px;
+$mg-x2-2: 1.4rem;
+$mg-x2: 1.6rem;
 $mg-x3: 2.4rem;
 $mg-x4: 3.2rem;
 
 // border-radius
 $br-small: 5px;
-$br-big: 10px; 
+$br-big: 10px;
 
 // wrapper
 $wrapper: max(2rem, 15.3vw - 18rem / 2);
@@ -59,60 +59,61 @@ $breakpoints: (
   }
 }
 
-  //button
-  @mixin button-bg($bg) {
-    justify-content: center;
-    background-color: $bg;
-    max-width: 100%;
+//button
+@mixin button-bg($bg) {
+  justify-content: center;
+  background-color: $bg;
+  max-width: 100%;
 
-    @if $bg == $c-primary {
-      font-family: $ff-heading;
+  @if $bg == $c-primary {
+    font-family: $ff-heading;
+    color: $c-title;
+    &:hover {
+      background-color: $c-btn-hprimary;
+      transition: background-color 0.5s ease;
+    }
+  } @else if $bg == $c-secondary {
+    font-family: $ff-text;
+    color: $c-white;
+    &:hover {
       color: $c-title;
-      &:hover {
-        background-color: $c-btn-hprimary;
-        transition: background-color 0.5s ease;
-      }
-    } @else if $bg == $c-secondary {
-      font-family: $ff-text;
-      color: $c-white;
-      &:hover {
-        color: $c-title;
-        background-color: $c-btn-hsecondary;
-        transition: background-color 0.5s ease;
-      }
+      background-color: $c-btn-hsecondary;
+      transition: background-color 0.5s ease;
     }
   }
+}
 
-  .wrapper {
-    padding-inline: max(2rem, 15.3vw - 9rem);
-  }
+.wrapper {
+  padding-inline: max(2rem, 15.3vw - 9rem);
+}
 
-  .sr-only {
-    display: none;
-  }
+.sr-only {
+  display: none;
+}
 
-  .fs-title {
-    font-size: $fs-title !important;
-  }
+.fs-title {
+  font-size: $fs-title !important;
+}
 
-  .logo {
-    height: 2.6rem;
-  }
+.visually-hidden {
+  display: none;
+}
 
-  .visually-hidden {
-    display: none;
-  }
+.flex-items {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+}
 
-  .btn {
-    border-color: transparent;
-    font-size: $fs-body;
-    padding: 18px 24px;
-    border-radius: 5px;
-    font-weight: 700;
-    max-width: max-content;
-    cursor: pointer;
-    display: flex;
-    column-gap: 16px;
-    align-items: center;
-  }
-
+.btn {
+  border-color: transparent;
+  font-size: $fs-body;
+  padding: 18px 24px;
+  border-radius: 5px;
+  font-weight: 700;
+  max-width: max-content;
+  cursor: pointer;
+  display: flex;
+  column-gap: 16px;
+  align-items: center;
+}

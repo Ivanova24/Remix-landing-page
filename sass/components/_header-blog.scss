@@ -1,9 +1,26 @@
 @use "variables" as *;
+@use "button-toggle" as *;
 
 .header-blog {
-    padding-inline: max(2rem, 15.6vw - 7.5rem);
-    padding-block: clamp(2rem, calc(2rem + (4 - 2) * ((100vw - 37rem) / (114 - 37))), 4rem);
-    
+  padding-inline: max(2rem, 15.6vw - 7.5rem);
+  padding-block: clamp(
+    2rem,
+    calc(2rem + (4 - 2) * ((100vw - 37rem) / (114 - 37))),
+    4rem
+  );
 }
 
+.flex-items {
+  font-family: $ff-heading;
+  font-weight: 500;
+  color: $c-text; 
 
+  li:last-child {
+    margin-left: auto;
+  }
+
+  li:first-child {
+    display: inline-block;
+    height: 27px;
+  }
+}
