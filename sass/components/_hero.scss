@@ -1,9 +1,5 @@
 @use "variables" as *;
 
-.hero {
-  padding: 4rem $wrapper 0;
-}
-
 .header {
   margin-bottom: clamp(
     2rem,

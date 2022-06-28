@@ -1,3 +1,13 @@
+:root {
+  // wrapper
+--wrapper-inline: max(2rem, 15.6vw - 7.5rem);
+--wrapper-block: clamp(
+  2rem,
+  calc(2rem + (4 - 2) * ((100vw - 37rem) / (114 - 37))),
+  4rem
+);
+}
+
 // Color
 /* light mode  */
 $c-title: hsla(0, 0%, 0%, 1);
@@ -40,9 +50,6 @@ $mg-x4: 3.2rem;
 $br-small: 5px;
 $br-big: 10px;
 
-// wrapper
-$wrapper: max(2rem, 15.3vw - 18rem / 2);
-
 // breakPoints
 $breakpoints: (
   small: 31.188rem,
@@ -83,8 +90,16 @@ $breakpoints: (
   }
 }
 
-.wrapper {
-  padding-inline: max(2rem, 15.3vw - 9rem);
+@mixin flexible($dis, $direction, $corte, $just, $align, $gap) {
+  display         : $dis;
+  flex-flow       : $direction $corte;
+  justify-content : $just;
+  align-items     : $align;
+  gap             : $gap; 
+}
+
+.wrapper-inline {
+  padding-inline: var(--wrapper-inline);
 }
 
 .sr-only {

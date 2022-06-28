@@ -1,6 +1,15 @@
+:root {
+  --wrapper-inline: max(2rem, 15.6vw - 7.5rem);
+  --wrapper-block: clamp(
+    2rem,
+    calc(2rem + (4 - 2) * ((100vw - 37rem) / (114 - 37))),
+    4rem
+  );
+}
+
 /* light mode  */
-.wrapper {
-  padding-inline: max(2rem, 15.3vw - 9rem);
+.wrapper-inline {
+  padding-inline: var(--wrapper-inline);
 }
 
 .sr-only {
@@ -148,10 +157,6 @@ meter {
   background-color: #f6f7f9;
   padding: 10px 20px;
   border-radius: 5px;
-}
-
-.hero {
-  padding: 4rem max(2rem, 15.3vw - 9rem) 0;
 }
 
 .header {
@@ -693,19 +698,18 @@ meter {
   }
 }
 .header-blog {
-  padding-inline: max(2rem, 15.6vw - 7.5rem);
-  padding-block: clamp(2rem, 2rem + 2 * (100vw - 37rem) / 77, 4rem);
+  padding-block: var(--wrapper-block);
 }
 
-.flex-items {
+.nav {
   font-family: "Space Grotesk", sans-serif;
   font-weight: 500;
   color: #3b3b3b;
 }
-.flex-items li:last-child {
+.nav li:last-child {
   margin-left: auto;
 }
-.flex-items li:first-child {
+.nav li:first-child {
   display: inline-block;
   height: 27px;
 }
